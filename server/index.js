@@ -6,8 +6,11 @@ const presentationRoutes = require('./routes/presentationRoutes');
 
 const app = express();
 
-// Middleware
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+// Middleware — allow configured origin or all origins as fallback
+app.use(cors({
+  origin: process.env.CLIENT_URL || '*',
+  credentials: true,
+}));
 app.use(express.json());
 app.use('/downloads', express.static('downloads'));
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function EditableSlide({ slide, index, onChange }) {
   const updateTitle = (val) => onChange({ ...slide, title: val });

@@ -17,6 +17,9 @@ app.use('/downloads', express.static('downloads'));
 // Routes
 app.use('/api/presentations', presentationRoutes);
 
+// Root route
+app.get('/', (req, res) => res.json({ name: 'SlideNova API', status: 'ok', version: '1.0.0' }));
+
 // Health check
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
